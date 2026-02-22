@@ -24,7 +24,10 @@ def single_run_mlp_lm(train_d, dev_d):
     epoch_train_losses, epoch_train_ppls, epoch_dev_losses, epoch_dev_ppls = run_mlp_lm(train_config, train_d, dev_d)
     visualize_epochs(epoch_train_losses, epoch_dev_losses, "Loss", "mlp_lm_loss.png")
     visualize_epochs(epoch_train_ppls, epoch_dev_ppls, "Perplexity", "mlp_lm_ppl.png")
-
+    #*****************************
+    # This was added to explore how the smaller model performs.
+    sample_from_mlp_lm(train_config, dev_d)
+    #*****************************
 
 def sample_from_trained_mlp_lm(dev_d):
     pretrained_config = EasyDict({
@@ -44,15 +47,15 @@ def sample_from_trained_mlp_lm(dev_d):
 if __name__ == '__main__':
     # Test the one-step BPE algorithm
     # uncomment the following line to run
-    # test_one_step_bpe()
+    #test_one_step_bpe()
 
     # Test the BPE algorithm
     # uncomment the following line to run
-    # test_bpe()
+    #test_bpe()
 
     # Run BPE on the wikitext dataset
     # uncomment the following line to run
-    # bpe_on_wikitext()
+    #bpe_on_wikitext()
 
     # load raw data for lm
     # uncomment the following line to run
@@ -60,9 +63,9 @@ if __name__ == '__main__':
 
     # Run a single training run
     # uncomment the following line to run
-    # single_run_mlp_lm(train_data, dev_data)
+    single_run_mlp_lm(train_data, dev_data)
 
     # Sample from the pretrained model
     # uncomment the following line to run
-    sample_from_trained_mlp_lm(dev_data)
+    #sample_from_trained_mlp_lm(dev_data)
 

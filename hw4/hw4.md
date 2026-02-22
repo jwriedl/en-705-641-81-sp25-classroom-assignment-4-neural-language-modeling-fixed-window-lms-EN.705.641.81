@@ -8,8 +8,8 @@ In this homework, we will:
 ### Setup
 create a new environment for this homework:
 ```
-conda create -n ssm_hw4 python=3.10.13
-```
+
+`conda create -n ssm_hw4 python=3.10.13``
 
 And install the required packages:
 ```
