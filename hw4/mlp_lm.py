@@ -239,10 +239,8 @@ def train(model, train_dataloader, dev_dataloader, criterion, optimizer, schedul
             optimizer.zero_grad()
             loss.backward()
             optimizer.step()
-            scheduler.step()
+            #scheduler.step() Tried with and without the scheduler step.
             
-
-
 
             train_losses.append(loss.item())
             train_ppls.append(ppl.item())
